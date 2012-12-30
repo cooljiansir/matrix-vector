@@ -5,6 +5,7 @@
 #include <vector>
 #include <math.h>
 //#define LOCAL
+//#define DEBUG1
 using namespace std;
 
 void swap(double& i,double& j)
@@ -30,10 +31,13 @@ void CMatrix::show()
 
 CMatrix::CMatrix(unsigned int r,unsigned int c)  //构造函数1，由矩阵的行数和列数创建矩阵类对象，并为矩阵元素分配存储空间，将矩阵初始化为单位矩阵；
 {
+#ifdef DEBUG1
+	cout<<"调用CMatrix类构造函数CMatrix(unsigned int r,unsigned int c)"<<endl;
+#endif
 	pElement = NULL;
 	if(r<=0||c<=0)
 	{
-		cout<<"非法行数或列数！"<<endl;
+		cout<<"CMatrix 构造出错---非法行数或列数！"<<endl;
 	}
 	else
 	{
@@ -52,6 +56,9 @@ CMatrix::CMatrix(unsigned int r,unsigned int c)  //构造函数1，由矩阵的行数和列数
 }
 CMatrix::CMatrix(char *pFileName)
 {
+#ifdef DEBUG1
+	cout<<"调用CMatrix类构造函数CMatrix(char *pFileName)"<<endl;
+#endif
 	nColumn = 0;
 	pElement = NULL;
 	FILE *pfile;
@@ -154,6 +161,9 @@ int CMatrix::GetRowsNum() const
 }
 CMatrix::CMatrix(const CMatrix& m)
 {
+#ifdef DEBUG1
+	cout<<"调用CMatrix类构造函数CMatrix(const CMatrix& m)"<<endl;
+#endif
 	nRow = m.GetRowsNum();
 	nColumn = m.GetColumnsNum();
 	pElement = new double[nRow*nColumn];
