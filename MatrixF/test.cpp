@@ -91,7 +91,7 @@ void testInsertRow()
 	matrix.show();
 	cout<<"插入行:"<<endl;
 	double row[3] = {111.0,111.1,111.2};
-	matrix.AddRow(row,2);
+	matrix.AddRow(row,-1);
 	matrix.show();
 }
 void testInsertColumn()
@@ -101,7 +101,7 @@ void testInsertColumn()
 	matrix.show();
 	cout<<"插入列:"<<endl;
 	double column[3] = {111.0,111.1,111.2};
-	matrix.AddColumn(column,1);
+	matrix.AddColumn(column,-1);
 	matrix.show();
 }
 void testDeleteRow()
@@ -154,6 +154,6 @@ void testMatOut()
 }
 int main()
 {
-	testAdd();
+	testInsertColumn();
 	return ;
 }
