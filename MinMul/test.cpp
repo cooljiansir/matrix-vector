@@ -8,8 +8,13 @@ void testMinMul()
 	CMinMul c(x,y,6);
 	c.getCoe(2).show();
 }
+void testFile()
+{
+	CMinMul c("test1.dat");
+	c.getCoe(2).show();
+}
 int main()
 {
-	testMinMul();
+	testFile();
 	return 0;
 }

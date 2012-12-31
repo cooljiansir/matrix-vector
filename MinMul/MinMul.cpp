@@ -46,14 +46,36 @@ CMinMul::CMinMul(unsigned int n)//构造函数2，n为点的个数，以0填充
 *
 *
 */
+void CMinMul::show()
+{
+	int i;
+	printf("X: ");
+	for(i = 0;i<nPoint;i++)
+		printf("%lf  ",X[i]);
+	printf("\nY: ");
+	for(i = 0;i<nPoint;i++)
+		printf("%lf  ",Y[i]);
+	printf("\n");
+}
 CMinMul::CMinMul(char *pFile)//构造函数3，通过文件读取构造
 {
+	X = NULL;
+	Y = NULL;
 	CMatrix matrix(pFile);//使用矩阵的文件读
 	double *x,*y;
 	int n = matrix.GetColumnsNum();
 	x = matrix.DeleteRow(0);
 	y = matrix.DeleteRow(0);
-	CMinMul(x,y,n);
+	X = new double[n];
+	Y = new double[n];
+	if(X==NULL||Y==NULL)
+	{
+		cout<<"CMinMul 构造出错---内存分配失败！"<<endl;
+		return;
+	}
+	nPoint = n;
+	for(int i = 0;i<nPoint;i++)
+		X[i] = x[i],Y[i] = y[i];
 }
 CMinMul::CMinMul(const CMinMul& b)//构造函数4,拷贝构造函数
 {
@@ -100,10 +122,11 @@ CVector CMinMul::getCoe(int maxPower)//最小二乘法求解结果(a1,a2,a3,a4...an),maxP
 		C(i,0) = 1;
 	for(int j = 1;j<Column;j++)
 		for(int i = 0;i<nPoint;i++)
-			C(i,j) = X[i] * C(i,j-1);
-	CMatrix CT = C.Tranpose();
+			C(i,j) = X[i] * C(i,j-1);//构造矩阵C
+
+	CMatrix CT = C.Tranpose();//C矩阵的转置CT
 	CVector vectorY(nPoint,Y);
-	CLinearEquation linearEquation(CT*C,CT*vectorY);
+	CLinearEquation linearEquation(CT*C,CT*vectorY);//解方程组CT*C*x=CT*b,其中x为参数向量
 	return linearEquation.Gaussian();
 }
 unsigned int CMinMul::getPointNums() const//点的个数

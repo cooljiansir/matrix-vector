@@ -23,6 +23,7 @@ public:
 	double getYat(int i) const;//获取下标为i的Y
 	void setXat(int i,double b);//设置下标为i的X
 	void setYat(int i,double b);//设置下标为i的Y
+	void show();
 };
 
 #endif
