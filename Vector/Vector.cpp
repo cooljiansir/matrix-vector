@@ -88,6 +88,7 @@ CVector& CVector::operator =(CVector& v)
 	{
 		pElement[i] = v[i];
 	}
+	return *this;
 }
 CVector& CVector::operator +(void)//重载一元运算符+
 {
