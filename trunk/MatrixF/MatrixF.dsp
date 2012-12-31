@@ -91,6 +91,10 @@ SOURCE=.\Matrix.cpp
 
 SOURCE=.\test.cpp
 # End Source File
+# Begin Source File
+
+SOURCE=.\Vector.cpp
+# End Source File
 # End Group
 # Begin Group "Header Files"
 
@@ -98,6 +102,10 @@ SOURCE=.\test.cpp
 # Begin Source File
 
 SOURCE=.\Matrix.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Vector.h
 # End Source File
 # End Group
 # Begin Group "Resource Files"

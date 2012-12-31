@@ -1,5 +1,6 @@
 #ifndef __CMATRIX__H
 #define __CMATRIX__H
+#include "Vector.h"
 
 class CMatrix
 {
@@ -24,7 +25,7 @@ public:
 	CMatrix operator -(const CMatrix& m) const;//重载二元运算符-,即两个矩阵求差
 	CMatrix operator *(CMatrix& m) const;//重载二元运算符*,即两个矩阵求积
 	CMatrix operator *(const double& x) const;//重载二元运算符*,即矩阵与数相乘
-	CMatrix operator *(const CVector& v) const;//重载二元运算符*，即矩阵与向量相乘
+	CVector operator *(CVector& v) const;//重载二元运算符*，即矩阵与向量相乘
 	CMatrix operator /(const double& x ) const;//重载二元运算符/,即矩阵与数相除
 	CMatrix operator ^(const int& t) const;//重载二元运算符^,即矩阵求t次幂
 	void operator -=(CMatrix& m);//重载二元运算符-=，即自减运算

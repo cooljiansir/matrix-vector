@@ -6,23 +6,24 @@
 --------------------Configuration: MatrixF - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\zhi_jian\AppData\Local\Temp\RSP1D86.tmp" with contents
+Creating temporary file "C:\Users\zhi_jian\AppData\Local\Temp\RSP579.tmp" with contents
 [
 /nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/MatrixF.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
 "E:\u盘\技术天堂\vc\陈荣\matrix-vector\MatrixF\test.cpp"
 ]
-Creating command line "cl.exe @C:\Users\zhi_jian\AppData\Local\Temp\RSP1D86.tmp" 
-Creating temporary file "C:\Users\zhi_jian\AppData\Local\Temp\RSP1D87.tmp" with contents
+Creating command line "cl.exe @C:\Users\zhi_jian\AppData\Local\Temp\RSP579.tmp" 
+Creating temporary file "C:\Users\zhi_jian\AppData\Local\Temp\RSP57A.tmp" with contents
 [
 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/MatrixF.pdb" /debug /machine:I386 /out:"Debug/MatrixF.exe" /pdbtype:sept 
 ".\Debug\Matrix.obj"
 ".\Debug\test.obj"
+".\Debug\Vector.obj"
 ]
-Creating command line "link.exe @C:\Users\zhi_jian\AppData\Local\Temp\RSP1D87.tmp"
+Creating command line "link.exe @C:\Users\zhi_jian\AppData\Local\Temp\RSP57A.tmp"
 <h3>Output Window</h3>
 Compiling...
 test.cpp
-E:\u盘\技术天堂\vc\陈荣\matrix-vector\MatrixF\test.cpp(158) : warning C4508: 'main' : function should return a value; 'void' return type assumed
+E:\u盘\技术天堂\vc\陈荣\matrix-vector\MatrixF\test.cpp(169) : warning C4508: 'main' : function should return a value; 'void' return type assumed
 Linking...
 
 

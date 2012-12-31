@@ -241,6 +241,23 @@ CMatrix CMatrix::operator *(CMatrix& m) const//重载二元运算符*,即两个矩阵求积
 	}
 	return matrix;
 }
+CVector CMatrix::operator *(CVector& v) const//重载二元运算符*，即矩阵与向量相乘
+{
+	CVector vector(nRow);
+	if(nColumn!=v.GetDegree())
+	{
+		cout<<"CMatrix “*”向量出错---矩阵的列数与向量的行数不同"<<endl;
+		return vector;
+	}
+	for(int i = 0;i<nRow;i++)
+	{
+		double sum = 0;
+		for(int j = 0;j<nColumn;j++)
+			sum += pElement[i*nColumn+j]*v[j];
+		vector[i] = sum;
+	}
+	return vector;
+}
 CMatrix CMatrix::operator *(const double& x) const//重载二元运算符*,即矩阵与数相乘
 {
 	CMatrix matrix(*this);

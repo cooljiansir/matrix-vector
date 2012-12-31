@@ -152,8 +152,19 @@ void testMatOut()
 	}
 	
 }
+void testMulV()
+{
+	CMatrix matrix("test6.dat");
+	cout<<"A:"<<endl;
+	matrix.show();
+	CVector vector(1.0,1.0,1.0);
+	CVector vector2 = matrix*vector;
+	cout<<"向量的积"<<endl;
+	vector2.show();
+
+}
 int main()
 {
-	testInsertColumn();
+	testMulV();
 	return ;
 }
